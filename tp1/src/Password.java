@@ -41,6 +41,7 @@ public class Password {
     public static String bruteForce6Digit(String targetHash) {
 
         // Code here
+        hashPassword(String.format("%06d",123));
 
         return null;
     }
