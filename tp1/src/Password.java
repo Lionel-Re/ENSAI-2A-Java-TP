@@ -71,7 +71,7 @@ public class Password {
      */
     public static boolean isStrongPassword(String password) {
 
-        if(password.length()<12){
+        if (password.length() < 12) {
             return false;
         }
 
@@ -79,14 +79,14 @@ public class Password {
         boolean contientUnMinuscule = false;
         boolean contientUnChiffre = false;
 
-        for(int i=0; i<password.length(); i++){
+        for (int i = 0; i < password.length(); i++) {
             char caractere = password.charAt(i);
 
         }
 
         return false;
     }
-    
+
     /**
      * Checks the strength of multiple passwords and stores the results in a
      * HashMap.
