@@ -86,7 +86,7 @@ public class Password {
 
         return false;
     }
-
+    
     /**
      * Checks the strength of multiple passwords and stores the results in a
      * HashMap.
