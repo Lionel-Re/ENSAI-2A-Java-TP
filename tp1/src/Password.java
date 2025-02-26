@@ -42,7 +42,7 @@ public class Password {
 
         // Code here
 
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 1000000; i++) {
 
             String indiceString = String.format("%06d", i);
             String indicStringHash = hashPassword(indiceString);
@@ -71,7 +71,18 @@ public class Password {
      */
     public static boolean isStrongPassword(String password) {
 
-        // Code here
+        if(password.length()<12){
+            return false;
+        }
+
+        boolean contientUnMajuscule = false;
+        boolean contientUnMinuscule = false;
+        boolean contientUnChiffre = false;
+
+        for(int i=0; i<password.length(); i++){
+            char caractere = password.charAt(i);
+
+        }
 
         return false;
     }
