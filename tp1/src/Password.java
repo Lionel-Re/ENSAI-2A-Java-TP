@@ -78,13 +78,35 @@ public class Password {
         boolean contientUnMajuscule = false;
         boolean contientUnMinuscule = false;
         boolean contientUnChiffre = false;
+        boolean contienEspace = false;
+
+        char caractere;
 
         for (int i = 0; i < password.length(); i++) {
-            char caractere = password.charAt(i);
+
+            caractere = password.charAt(i);
+
+            if (Character.isUpperCase(caractere)) {
+                contientUnMajuscule = true;
+            }
+
+            else if (Character.isLowerCase(caractere)) {
+                contientUnMinuscule = true;
+            }
+
+            else if (Character.isDigit(caractere)) {
+                contientUnChiffre = true;
+            }
+
+            else if (Character.isWhitespace(caractere)) {
+                contienEspace = true;
+            }
 
         }
 
-        return false;
+        return contientUnMajuscule && contientUnMinuscule && contientUnChiffre
+                && !contienEspace;
+
     }
 
     /**
@@ -98,8 +120,13 @@ public class Password {
     public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
         // Code here
+        HashMap<String, Boolean> resultat = new HashMap<>();
 
-        return null;
+        for (String motDePasse : passwords) {
+            resultat.put(motDePasse, isStrongPassword(motDePasse));
+        }
+
+        return resultat;
     }
 
     /**
